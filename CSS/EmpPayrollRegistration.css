@@ -143,12 +143,15 @@ select {
     padding: 10px;
     cursor: pointer;
     margin: 5px;
+    width: 100px;
   }
-  
+  .submit-reset{
+    justify-content: end;  
+  }
   .submitButton {
     border: none;
     background-color: rgb(50, 123, 192);
-    margin-right: 30px;
+    margin-right: 10px;
   }
   .submitButton:hover{ 
     color: black;
@@ -204,7 +207,7 @@ select {
     height: 30px;
     margin-left: 12px;
     }
-
+    
     .submit-reset {
       width: 100%;
       display: flex;
