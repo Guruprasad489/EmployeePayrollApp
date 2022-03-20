@@ -6,7 +6,6 @@
 //     output.textContent = salary.value;
 // })
 
-
 //Javascript to add set event listeners on document loading(UC10)
 window.addEventListener('DOMContentLoaded', (event) => {
     //Setting the name to the employee object for validation
