@@ -30,8 +30,8 @@ img{ height: 3em;}
     color: #82A70C;
     text-transform: uppercase;
 }
-.emp-text:hover{ text-shadow: 1px 1px #42515f;}
-.emp-payroll:hover{ text-shadow: 1px 1px #82A70C;}
+.emp-text:hover{ text-shadow: 1px 1px 1px #42515f;}
+.emp-payroll:hover{ text-shadow: 1px 1px 1px #82A70C;}
 .emp-payroll{ color: #42515f;}
 * { box-sizing: border-box;}
 
@@ -54,7 +54,7 @@ img{ height: 3em;}
     opacity: 1;
     margin-bottom: 50px;
 }
-.form:hover{ box-shadow: 1px 1px 4px #82A70C;}
+.form:hover{ box-shadow: 1px 1px 6px #82A70C;}
 .form-head{
     font: normal normal bold 24px/37px Roboto;
     font-family: Roboto;
@@ -64,7 +64,7 @@ img{ height: 3em;}
     opacity: 1;
     padding-bottom: 20px;
 }
-.form-head:hover{ text-shadow: 1px 1px #82A70C;}
+.form-head:hover{ text-shadow: 1px 1px 10px #82A70C;}
 .row-content{
     display: flex;
     flex-direction: row;
@@ -111,7 +111,7 @@ label{
     border-radius: 50%;
     margin-left: 12px;
 }
-.profile:hover{ background-color: #82A70C;}
+.profile:hover{ background-color: #82A70C; box-shadow: 0px 0px 15px #82A70C;}
 
 /* UC5 */
 select {
@@ -124,6 +124,7 @@ select {
     color: #42515f;
     background-color: transparent;
   }
+  select:hover{ background-color:  #e9f3c9;}
 
   /* UC6 */
 .buttonParent {
@@ -145,6 +146,7 @@ select {
     margin: 5px;
     width: 100px;
   }
+  .button:hover{ box-shadow: 1px 1px 20px #82A70C;}
   .submit-reset{
     justify-content: end;  
   }
@@ -172,6 +174,7 @@ select {
 }
 .label:hover{
     color: black;
+    text-shadow: 1px 1px 10px #82A70C;
 }
 
 /*UC6 - Media querry*/
