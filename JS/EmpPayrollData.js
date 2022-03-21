@@ -1,5 +1,5 @@
 //UC9 - Employee Payroll Data
-class EmployeePayrollData {
+class EmpPayrollData {
 
     //Getter and setter methods for property of id
     get empId() { return this._empId };
