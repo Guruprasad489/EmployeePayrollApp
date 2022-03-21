@@ -11,51 +11,38 @@ class EmployeePayrollData {
     };
 
     //Getter and setter methods for properties of name
-    get empName() { return this._empName };
-    set empName(name) {
+    get name() { return this._name };
+    set name(name) {
         let namePattern = RegExp('^[A-Z]{1}[a-z]{2,}$')
         if (namePattern.test(name))
-            this._empName = name
+            this._name = name
         else throw "Name Is Invalid";
     };
 
     //Getter and setter methods for properties of profilepic
-    get empProfilePic() {
-        return this._empProfilePic;
+    get profilePic() {
+        return this._profilePic;
     }
-    set empProfilePic(profilePic) {
-        if (profilePic != null)
-            this._empProfilePic = profilePic;
-        else throw `Profile Value Is Null`;
+    set profilePic(profilePic) {
+            this._profilePic = profilePic;
     }
 
     //Getter and setter methods for property of gender
-    get empGender() { return this._empGender };
-    set empGender(gender) {
-        //Pattern for gender either M or F
-        let genderPattern = new RegExp('^male$|^female$');
-        if (genderPattern.test(gender))
-            this._empGender = gender;
-        else
-            throw "The Given Gender Is Not valid";
+    get gender() { return this.gender };
+    set gender(gender) {
+            this.gender = gender;
     }
 
     //Getter and setter methods for property of department
-    get empDept() { return this._empDept;}
-    set empDept(dept) {
-        if (dept != null)
-            this._empDept = dept;
-        else throw `Department Value Is Null`;
+    get dept() { return this.dept;}
+    set dept(dept) {
+            this.dept = dept;
     }
 
     //Getter and setter methods for property of salary
-    get empSalary() { return this._empSalary };
-    set empSalary(salary) {
-        //Pattern for salary for positive numbers
-        let salaryPattern = new RegExp('^[1-9][0-9]*$');
-        if (salaryPattern.test(salary))
-            this._empSalary = salary;
-        else throw "The Given Salary Is Invalid";
+    get salary() { return this.salary };
+    set salary(salary) {
+            this.salary = salary;
     };
 
     //Getter and setter methods for property of startdate
@@ -71,16 +58,13 @@ class EmployeePayrollData {
     //Getter and setter methods for property of notes
     get empNotes() { return this._empNotes; }
     set empNotes(notes) {
-        if (notes != null)
             this._empNotes = notes;
-        else
-            throw `No Notes Found`;
     }
 
     //Method to return string of values
     toString() {
         const options = { year: 'numeric', month: 'long', day: 'numeric' };
-        const empDate = !this._startDate ? "undefined" : this._startDate.toLocaleDateString("en-US", options)
+        const empDate = this._startDate ? "undefined" : this._startDate.toLocaleDateString("en-US", options)
         return `Employee Name : ${this._empName} \nEmployee Gender : ${this._empGender} \nProfile Pic : ${this._empProfilePic} \nEmployee Department : ${this._empDept} \nEmployee Salary : ${this._empSalary} \nEmployee Start-Date : ${empDate} \nNotes = ${this._empNotes}`;
     }
 }

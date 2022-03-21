@@ -176,6 +176,12 @@ select {
     color: black;
     text-shadow: 1px 1px 10px #82A70C;
 }
+error-output{
+    margin-left: 10px;
+    font-size: 12px;
+    font-style: italic;
+    color: red;
+}
 
 /*UC6 - Media querry*/
 /* @media only screen and(max-width:900px) {
