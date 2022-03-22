@@ -108,3 +108,27 @@ function createAndUpdateStorage(EmpPayrollData){
     alert(empPayrollList.toString());
     localStorage.setItem("empPayrollList", JSON.stringify(empPayrollList))
 }
+
+const resetForm = () => {
+    setValue('#name', '');
+    unsetSelectedValues('[name=profile]');
+    unsetSelectedValues('[name=gender]');
+    unsetSelectedValues('[name=dept]');
+    setValue('#salary', '');
+    setValue('#notes', '');
+    setValue('#day', '');
+    setValue('#month', '');
+    setValue('#year', '');
+}
+const unsetSelectedValues = (propertyValue) => {
+    let allItems = document.querySelectorAll(propertyValue);
+    allItems.forEach(item => {
+        item.checked = false
+    });
+}
+
+const setValue = (id, value) => {
+    const element = document.querySelector(id);
+    element.value = value;
+}
+
