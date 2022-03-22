@@ -55,7 +55,7 @@ const setTextValue = (id, value) => {
 const save = () => {
     try {
         let EmpPayrollData = createEmployeePayroll();
-        alert(EmpPayrollData.toString());
+        createAndUpdateStorage(EmpPayrollData);
     } catch (e) {
         return;
     }
@@ -95,4 +95,16 @@ const getSelectedValues = (propertyValue) => {
             selectedItems.push(item.value);
     });
     return selectedItems;
+}
+
+function createAndUpdateStorage(EmpPayrollData){
+    let empPayrollList = JSON.parse(localStorage.getItem("empPayrollList"));
+
+    if(empPayrollList != undefined){
+        empPayrollList.push(EmpPayrollData);
+    } else{
+        empPayrollList = [EmpPayrollData]
+    }
+    alert(empPayrollList.toString());
+    localStorage.setItem("empPayrollList", JSON.stringify(empPayrollList))
 }
