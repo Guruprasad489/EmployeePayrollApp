@@ -14,24 +14,67 @@ const createInnerHtml = () => {
     <th>Start Date</th>
     <th>Actions</th>
     </tr>`;
-    const innerHtml = `${headerHtml} 
-<tr>
-    <td>
-        <img class="profile" src="../Assets/profile-images/Ellipse -2.png" alt="profile">
-    </td>
-    <td>Guruprasad</td>
-    <td>Male</td>
-    <td>
-        <div class="dept-label">HR</div>
-        <div class="dept-label">Engineer</div>
-    </td>
-    <td>36000</td>
-    <td>01 nov 2020</td>
-    <td>
-        <img id="1" onclick="remove(this)" src="../Assets/icons/delete-black-18dp.svg" alt="delete">
-        <img id="1" onclick="update(this)" src="../Assets/icons/create-black-18dp.svg" alt="edit">
-    </td>
-</tr>
+    let innerHtml = `${headerHtml}`;
+    let empPayrollList = createEmpPayrollJson();
+    for(const empPayrollData of empPayrollList){
+    innerHtml = `${innerHtml} 
+    <tr>
+        <td><img class="profile" src="${empPayrollData._profilePic}" alt="profile"></td>
+        <td>${empPayrollData._name}</td>
+        <td>${empPayrollData._gender}</td>
+        <td>${getDeptHtml(empPayrollData._dept)}</td>
+        <td>${empPayrollData._salary}</td>
+        <td>${empPayrollData._startDate}</td>
+        <td>
+            <img name="${empPayrollData._id}" onclick="remove(this)" src="../Assets/icons/delete-black-18dp.svg" alt="delete">
+            <img name="${empPayrollData._id}" onclick="update(this)" src="../Assets/icons/create-black-18dp.svg" alt="edit">
+        </td>
+   </tr>
 `;
+    }
+    
 document.querySelector('#table-display').innerHTML = innerHtml;
+}
+
+const getDeptHtml = (deptList) => {
+    let deptHtml = '';
+    for(const dept of deptList){
+        deptHtml = `${deptHtml} <div class="dept-label">${dept}</div>`
+    }
+    return deptHtml;
+}
+
+//Creating json object for employee data
+const createEmpPayrollJson = () => {
+    let empPayrollListLocal = [{
+            _name: 'Guruprasad',
+            _gender: 'Male',
+            _dept: ['Engineer', 'Dev'],
+            _salary: '400000',
+            _startDate: '20 October 2022',
+            _notes: 'Welcome to Json',
+            _id: new Date().getTime() + 1,
+            _profilePic: '../Assets/profile-images/Ellipse -2.png'
+        },
+        {
+            _name: 'Guru Kumbar',
+            _gender: 'Male',
+            _dept: ['HR'],
+            _salary: '360000',
+            _startDate: '28 January 2022',
+            _notes: 'Hi',
+            _id: new Date().getTime() + 1,
+            _profilePic: '../Assets/profile-images/Ellipse -5.png'
+        }, {
+            _name: 'XYZ',
+            _gender: 'Female',
+            _dept: ['Finance'],
+            _salary: '300000',
+            _startDate: '01 April 2020',
+            _notes: 'Employee',
+            _id: new Date().getTime() + 1,
+            _profilePic: '../Assets/profile-images/Ellipse -1.png'
+        }
+    ];
+    return empPayrollListLocal;
 }
