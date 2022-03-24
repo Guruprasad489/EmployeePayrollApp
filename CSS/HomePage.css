@@ -216,3 +216,15 @@ td img:first-child {
     font-weight: 300;
     margin-bottom: 8px;
 }
+
+@media only screen and (max-width: 600px) {
+    .header_container {
+        display: flex;
+        flex-direction: column;
+    }
+    .add_button {
+        margin-top: 20px;
+        width: 70%;
+        padding: 8px;
+    }
+} 

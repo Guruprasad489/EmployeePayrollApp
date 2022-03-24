@@ -74,7 +74,7 @@ const createEmployeePayroll = () => {
     EmpPayrollData.gender = getSelectedValues('[name=gender]').pop();
     EmpPayrollData.dept = getSelectedValues('[name=dept]');
     EmpPayrollData.salary = getInputValueById('#salary');
-    EmpPayrollData.empNotes = getInputValueById('#notes');
+    EmpPayrollData.notes = getInputValueById('#notes');
     let date = `${getInputValueById('#day')} ${getInputValueById('#month')} ${getInputValueById('#year')}`;
     try {
         EmpPayrollData.startDate = new Date(date);

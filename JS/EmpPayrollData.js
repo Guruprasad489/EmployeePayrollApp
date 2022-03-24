@@ -2,10 +2,10 @@
 class EmpPayrollData {
 
     //Getter and setter methods for property of id
-    get empId() { return this._empId };
-    set empId(id) {
+    get id() { return this._id };
+    set id(id) {
         if (id != null)
-            this._empId = id;
+            this._id = id;
         else
             throw "The Id Is Null";
     };
@@ -56,15 +56,15 @@ class EmpPayrollData {
     }
 
     //Getter and setter methods for property of notes
-    get empNotes() { return this._empNotes; }
-    set empNotes(notes) {
-            this._empNotes = notes;
+    get notes() { return this._notes; }
+    set notes(notes) {
+            this._notes = notes;
     }
 
     //Method to return string of values
     toString() {
         const options = { year: 'numeric', month: 'long', day: 'numeric' };
         const empDate = this._startDate ? "undefined" : this._startDate.toLocaleDateString("en-US", options)
-        return `Employee Name : ${this._empName} \nEmployee Gender : ${this._empGender} \nProfile Pic : ${this._empProfilePic} \nEmployee Department : ${this._empDept} \nEmployee Salary : ${this._empSalary} \nEmployee Start-Date : ${empDate} \nNotes = ${this._empNotes}`;
+        return `Employee Name : ${this._name} \nEmployee Gender : ${this._gender} \nProfile Pic : ${this._profilePic} \nEmployee Department : ${this._dept} \nEmployee Salary : ${this._salary} \nEmployee Start-Date : ${empDate} \nNotes = ${this._notes}`;
     }
 }
